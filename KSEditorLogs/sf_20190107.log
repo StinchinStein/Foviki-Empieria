@@ -1,0 +1,70 @@
+2019-01-07 19:08:36.6362 [DEBUG] Scene Fusion version 1.8.1-4
+2019-01-07 19:08:36.6451 [INFO] Setting define symbol SCENE_FUSION
+2019-01-07 19:08:36.6562 [ERROR] MethodAccessException: Method `UnityEditor.Analytics.AnalyticsSettings:get_enabledForPlatform ()' is inaccessible from method `UnityEditor.Analytics.AnalyticsImporter:<AnalyticsImporter>m__6 (UnityEditor.BuildTarget,System.Collections.Generic.HashSet`1<string>)'
+
+UnityEditor.Build.BuildDefines.GetScriptCompilationDefines (BuildTarget target, System.String[] defines) (at C:/buildslave/unity/build/Modules/BuildPipeline/Editor/Managed/BuildDefines.cs:20)
+UnityEditorInternal.InternalEditorUtility:GetCompilationDefines(EditorScriptCompilationOptions, BuildTargetGroup, BuildTarget, ApiCompatibilityLevel)
+UnityEditorInternal.InternalEditorUtility:GetCompilationDefines(EditorScriptCompilationOptions, BuildTargetGroup, BuildTarget) (at C:/buildslave/unity/build/Editor/Mono/InternalEditorUtility.cs:424)
+UnityEditor.PlayerSettings:SetScriptingDefineSymbolsForGroup(BuildTargetGroup, String)
+KS.SceneFusion.API.sfUtility:SetDefineSymbol(String)
+KS.SceneFusion.Client.Editor.CoEditService:Start()
+KS.SceneFusion.Client.Editor.Initializer:Init()
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()
+
+2019-01-07 19:08:36.7322 [ERROR] MethodAccessException: Method `UnityEditor.Analytics.AnalyticsSettings:get_enabledForPlatform ()' is inaccessible from method `UnityEditor.Analytics.AnalyticsImporter:<AnalyticsImporter>m__6 (UnityEditor.BuildTarget,System.Collections.Generic.HashSet`1<string>)'
+
+UnityEditor.Build.BuildDefines.GetScriptCompilationDefines (BuildTarget target, System.String[] defines) (at C:/buildslave/unity/build/Modules/BuildPipeline/Editor/Managed/BuildDefines.cs:20)
+UnityEditor.PlayerSettings:SetScriptingDefineSymbolsForGroup(BuildTargetGroup, String)
+KS.SceneFusion.API.sfUtility:SetDefineSymbol(String)
+KS.SceneFusion.Client.Editor.CoEditService:Start()
+KS.SceneFusion.Client.Editor.Initializer:Init()
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()
+
+2019-01-07 19:08:36.8381 [ERROR] MethodAccessException: Method `UnityEditor.Analytics.AnalyticsSettings:get_enabledForPlatform ()' is inaccessible from method `UnityEditor.Analytics.AnalyticsImporter:<AnalyticsImporter>m__6 (UnityEditor.BuildTarget,System.Collections.Generic.HashSet`1<string>)'
+
+UnityEditor.Build.BuildDefines.GetScriptCompilationDefines (BuildTarget target, System.String[] defines) (at C:/buildslave/unity/build/Modules/BuildPipeline/Editor/Managed/BuildDefines.cs:20)
+UnityEditor.PlayerSettings:SetScriptingDefineSymbolsForGroup(BuildTargetGroup, String)
+KS.SceneFusion.API.sfUtility:SetDefineSymbol(String)
+KS.SceneFusion.Client.Editor.CoEditService:Start()
+KS.SceneFusion.Client.Editor.Initializer:Init()
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()
+
+2019-01-07 19:08:36.9391 [ERROR] MethodAccessException: Method `UnityEditor.Analytics.AnalyticsSettings:get_enabledForPlatform ()' is inaccessible from method `UnityEditor.Analytics.AnalyticsImporter:<AnalyticsImporter>m__6 (UnityEditor.BuildTarget,System.Collections.Generic.HashSet`1<string>)'
+
+UnityEditor.Build.BuildDefines.GetScriptCompilationDefines (BuildTarget target, System.String[] defines) (at C:/buildslave/unity/build/Modules/BuildPipeline/Editor/Managed/BuildDefines.cs:20)
+UnityEditor.PlayerSettings:SetScriptingDefineSymbolsForGroup(BuildTargetGroup, String)
+KS.SceneFusion.API.sfUtility:SetDefineSymbol(String)
+KS.SceneFusion.Client.Editor.CoEditService:Start()
+KS.SceneFusion.Client.Editor.Initializer:Init()
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()
+
+2019-01-07 19:08:37.0711 [ERROR] MethodAccessException: Method `UnityEditor.Analytics.AnalyticsSettings:get_enabledForPlatform ()' is inaccessible from method `UnityEditor.Analytics.AnalyticsImporter:<AnalyticsImporter>m__6 (UnityEditor.BuildTarget,System.Collections.Generic.HashSet`1<string>)'
+
+UnityEditor.Build.BuildDefines.GetScriptCompilationDefines (BuildTarget target, System.String[] defines) (at C:/buildslave/unity/build/Modules/BuildPipeline/Editor/Managed/BuildDefines.cs:20)
+UnityEditor.PlayerSettings:SetScriptingDefineSymbolsForGroup(BuildTargetGroup, String)
+KS.SceneFusion.API.sfUtility:SetDefineSymbol(String)
+KS.SceneFusion.Client.Editor.CoEditService:Start()
+KS.SceneFusion.Client.Editor.Initializer:Init()
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()
+
+2019-01-07 19:08:37.3761 [ERROR] MethodAccessException: Method `UnityEditor.Analytics.AnalyticsSettings:get_enabledForPlatform ()' is inaccessible from method `UnityEditor.Analytics.AnalyticsImporter:<AnalyticsImporter>m__6 (UnityEditor.BuildTarget,System.Collections.Generic.HashSet`1<string>)'
+
+UnityEditor.Build.BuildDefines.GetScriptCompilationDefines (BuildTarget target, System.String[] defines) (at C:/buildslave/unity/build/Modules/BuildPipeline/Editor/Managed/BuildDefines.cs:20)
+UnityEditorInternal.InternalEditorUtility:GetCompilationDefines(EditorScriptCompilationOptions, BuildTargetGroup, BuildTarget, ApiCompatibilityLevel)
+UnityEditorInternal.InternalEditorUtility:GetCompilationDefines(EditorScriptCompilationOptions, BuildTargetGroup, BuildTarget) (at C:/buildslave/unity/build/Editor/Mono/InternalEditorUtility.cs:424)
+UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface:TickCompilationPipeline(EditorScriptCompilationOptions, BuildTargetGroup, BuildTarget)
+
+2019-01-07 19:08:37.3791 [ERROR] MethodAccessException: Method `UnityEditor.Analytics.AnalyticsSettings:get_enabledForPlatform ()' is inaccessible from method `UnityEditor.Analytics.AnalyticsImporter:<AnalyticsImporter>m__6 (UnityEditor.BuildTarget,System.Collections.Generic.HashSet`1<string>)'
+
+UnityEditor.Build.BuildDefines.GetScriptCompilationDefines (BuildTarget target, System.String[] defines) (at C:/buildslave/unity/build/Modules/BuildPipeline/Editor/Managed/BuildDefines.cs:20)
+UnityEditorInternal.InternalEditorUtility:GetCompilationDefines(EditorScriptCompilationOptions, BuildTargetGroup, BuildTarget, ApiCompatibilityLevel)
+UnityEditorInternal.InternalEditorUtility:GetCompilationDefines(EditorScriptCompilationOptions, BuildTargetGroup, BuildTarget) (at C:/buildslave/unity/build/Editor/Mono/InternalEditorUtility.cs:424)
+UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface:TickCompilationPipeline(EditorScriptCompilationOptions, BuildTargetGroup, BuildTarget)
+
+2019-01-07 19:08:37.4691 [ERROR] MethodAccessException: Method `UnityEditor.Analytics.AnalyticsSettings:get_enabledForPlatform ()' is inaccessible from method `UnityEditor.Analytics.AnalyticsImporter:<AnalyticsImporter>m__6 (UnityEditor.BuildTarget,System.Collections.Generic.HashSet`1<string>)'
+
+UnityEditor.Build.BuildDefines.GetScriptCompilationDefines (BuildTarget target, System.String[] defines) (at C:/buildslave/unity/build/Modules/BuildPipeline/Editor/Managed/BuildDefines.cs:20)
+UnityEditorInternal.InternalEditorUtility:GetCompilationDefines(EditorScriptCompilationOptions, BuildTargetGroup, BuildTarget, ApiCompatibilityLevel)
+UnityEditorInternal.InternalEditorUtility:GetCompilationDefines(EditorScriptCompilationOptions, BuildTargetGroup, BuildTarget) (at C:/buildslave/unity/build/Editor/Mono/InternalEditorUtility.cs:424)
+UnityEditor.Scripting.ScriptCompilation.EditorCompilationInterface:TickCompilationPipeline(EditorScriptCompilationOptions, BuildTargetGroup, BuildTarget)
+
