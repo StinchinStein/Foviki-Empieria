@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DontDestroy : MonoBehaviour {
-    void Start() {
-        DontDestroyOnLoad(this);   
-    }
-    
-    void Update() {
-        
+    private static DontDestroy playerInstance;
+    void Awake() {
+        DontDestroyOnLoad(this);
+
+        if (playerInstance == null) {
+            playerInstance = this;
+        } else {
+            DestroyObject(gameObject);
+        }
     }
 }

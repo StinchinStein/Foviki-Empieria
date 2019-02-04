@@ -119,6 +119,40 @@ public class MyLobbyManager : NetworkLobbyManager {
         hostBtn.interactable = false;
         joinBtn.interactable = false;
     }
+    public override void OnStartServer() {
+        lobbyScene = "Lobby";
+        base.OnStartServer();
+    }
+    
+    public override void OnStopServer() {
+        //Debug.Log(SceneManager.GetActiveScene().name);
+        if (SceneManager.GetActiveScene().name.Equals("Lobby")) {
+            base.OnStopServer();
+            lobbyScene = "";
+        } else {
+            lobbyScene = "Lobby";
+        }
+    }
+
+    public void LeaveGame() {
+        if (isHosting) {
+            isHosting = false;
+            this.StopHost();
+            Debug.Log("Stopping lobby, you are host.");
+        } else {
+            this.StopClient();
+            Debug.Log("Disconnecting from host");
+        }
+        GEController.instance.uiMainMenu.SetActive(true);
+        GEController.instance.uiLobbyMenuNew.SetActive(false);
+        if (GEController.instance.uiInteractionMenu.activeInHierarchy) {
+            GEController.instance.uiInteractionMenu.SetActive(false);
+        }
+        hostBtn.interactable = true;
+        //hostBtn.onClick.AddListener(HostGame);
+        joinBtn.interactable = true;
+        //joinBtn.onClick.AddListener(JoinGame);
+    }
     public void JoinGame() {
         isHosting = false;
 
