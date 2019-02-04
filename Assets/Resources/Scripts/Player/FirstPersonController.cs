@@ -100,19 +100,19 @@ public class FirstPersonController : NetworkBehaviour {
             m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
         }
 
-        if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
+        if (!m_PreviouslyGrounded && IsGrounded())
         {
             StartCoroutine(m_JumpBob.DoBobCycle());
             PlayLandingSound();
             m_MoveDir.y = 0f;
             m_Jumping = false;
         }
-        if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
+        if (!IsGrounded() && !m_Jumping && m_PreviouslyGrounded)
         {
             m_MoveDir.y = 0f;
         }
 
-        m_PreviouslyGrounded = m_CharacterController.isGrounded;
+        m_PreviouslyGrounded = IsGrounded();
     }
 
 
@@ -144,7 +144,7 @@ public class FirstPersonController : NetworkBehaviour {
             m_MoveDir.z = desiredMove.z * speed;
 
 
-            if (m_CharacterController.isGrounded) {
+            if (IsGrounded()) {
                 m_MoveDir.y = -m_StickToGroundForce;
             } else {
                 m_MoveDir += Physics.gravity * m_GravityMultiplier * Time.fixedDeltaTime;
@@ -215,7 +215,7 @@ public class FirstPersonController : NetworkBehaviour {
 
     private void PlayFootStepAudio()
     {
-        if (!m_CharacterController.isGrounded)
+        if (!IsGrounded())
         {
             return;
         }
@@ -237,7 +237,7 @@ public class FirstPersonController : NetworkBehaviour {
         {
             return;
         }
-		if (m_CharacterController.velocity.magnitude > 0 && m_CharacterController.isGrounded) {
+		if (m_CharacterController.velocity.magnitude > 0 && IsGrounded()) {
 			m_Camera.transform.localPosition =
                 m_HeadBob.DoHeadBob (m_CharacterController.velocity.magnitude +
 			(speed * (m_IsWalking ? 1f : m_RunstepLenghten)));
@@ -300,6 +300,17 @@ public class FirstPersonController : NetworkBehaviour {
         }
     }
 
+    private bool IsGrounded() {
+        float floorDistanceFromFoot = m_CharacterController.stepOffset;
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, floorDistanceFromFoot) || m_CharacterController.isGrounded) {
+            Debug.DrawRay(transform.position, Vector3.down * floorDistanceFromFoot, Color.yellow);
+            return true;
+        }
+
+        return false;
+    }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
