@@ -49,7 +49,7 @@ MonoBehaviour:
       downsampling: 1
       forceForwardCompatibility: 1
       ambientOnly: 0
-      highPrecision: 0
+      highPrecision: 1
   screenSpaceReflection:
     m_Enabled: 0
     m_Settings:

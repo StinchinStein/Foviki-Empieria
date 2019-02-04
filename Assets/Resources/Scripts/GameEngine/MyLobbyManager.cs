@@ -22,8 +22,9 @@ public class MyLobbyManager : NetworkLobbyManager {
 
     void Start() {
         gameEngine = GameObject.Find("GameManager").GetComponent<GEController>();
+        //this.client.RegisterHandler(MsgType.Disconnect, OnDisconnect);
     }
-
+    
     public override bool OnLobbyServerSceneLoadedForPlayer(GameObject lobbyPlayer, GameObject gamePlayer) {
         //gamePlayer.transform.Translate(GameObject.Find("Spawn Position 1").transform.position, Space.World);
         return true;
@@ -55,6 +56,7 @@ public class MyLobbyManager : NetworkLobbyManager {
     public override void OnLobbyServerPlayersReady() {
         //ServerStartGame("Asylum");
         ServerChangeScene("Asylum");
+        GEController.instance.STATE = "GAME";
     }
     
     public void ServerStartGame(string sceneName) {
@@ -111,6 +113,7 @@ public class MyLobbyManager : NetworkLobbyManager {
 
         GEController.instance.uiMainMenu.SetActive(false);
         GEController.instance.uiLobbyMenuNew.SetActive(true);
+        LobbyList.instance.INDEX = 0;
         //gameEngine.uiLobbySettings.SetActive(true);
 
         //StartGame("Asylum");
@@ -125,7 +128,7 @@ public class MyLobbyManager : NetworkLobbyManager {
     }
     
     public override void OnStopServer() {
-        //Debug.Log(SceneManager.GetActiveScene().name);
+        GEController.instance.STATE = "MAIN_MENU";
         if (SceneManager.GetActiveScene().name.Equals("Lobby")) {
             base.OnStopServer();
             lobbyScene = "";
@@ -148,16 +151,15 @@ public class MyLobbyManager : NetworkLobbyManager {
         if (GEController.instance.uiInteractionMenu.activeInHierarchy) {
             GEController.instance.uiInteractionMenu.SetActive(false);
         }
+        GEController.instance.STATE = "MAIN_MENU";
         hostBtn.interactable = true;
-        //hostBtn.onClick.AddListener(HostGame);
         joinBtn.interactable = true;
-        //joinBtn.onClick.AddListener(JoinGame);
     }
     public void JoinGame() {
         isHosting = false;
-
         GEController.instance.uiMainMenu.SetActive(false);
         GEController.instance.uiLobbyMenuNew.SetActive(true);
+        LobbyList.instance.INDEX = 0;
         //gameEngine.uiLobbySettings.SetActive(true);
 
 

@@ -10,6 +10,9 @@ public class LobbyPlayerScript : NetworkLobbyPlayer {
     private bool inLobby = false;
     [SyncVar(hook = "OnMyName")]
     public string username;
+    [SyncVar(hook = "OnSetReady")]
+    public bool isReady;
+
     void Start() {}
 
     public override void OnClientEnterLobby() {
@@ -20,7 +23,8 @@ public class LobbyPlayerScript : NetworkLobbyPlayer {
 
     public void ReadyUp() {
         this.SendReadyToBeginMessage();
-        transform.Find("Button").GetComponent<Image>().color = new Color(0f, 1f, 0.1f);
+        CmdSetReady(true);
+        OnSetReady(this.isReady);
     }
     public override void OnClientExitLobby() {
         LobbyList.instance.RemovePlayer(this.name);
@@ -32,9 +36,20 @@ public class LobbyPlayerScript : NetworkLobbyPlayer {
         this.username = name;
     }
 
+    [Command]
+    public void CmdSetReady(bool ready) {
+        this.isReady = ready;
+    }
+
     void OnMyName(string name) {
         this.username = name;
         GetComponentInChildren<Text>().text = name;
+    }
+    void OnSetReady(bool ready) {
+        this.isReady = ready;
+        if (isReady) {
+            transform.Find("Button").GetComponent<Image>().color = new Color(0f, 1f, 0.1f);
+        }
     }
 
     void SetupLocal() {

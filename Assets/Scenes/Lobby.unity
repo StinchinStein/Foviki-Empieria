@@ -1108,7 +1108,7 @@ PrefabInstance:
     - target: {fileID: 7488948110291585990, guid: 8af44734621382d4bb908dd91b292212,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 7488948110291416284, guid: 8af44734621382d4bb908dd91b292212,
         type: 3}
@@ -6786,7 +6786,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1573077146}
   m_TextComponent: {fileID: 2010763379}
   m_Placeholder: {fileID: 1131048296}
@@ -9640,6 +9640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824060be2cd833745b8ebb77c9779df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  STATE: MAIN_MENU
   uiInteractionMenu: {fileID: 1976847500}
   uiLobbySettings: {fileID: 1499888668}
   uiMainMenu: {fileID: 296303989}

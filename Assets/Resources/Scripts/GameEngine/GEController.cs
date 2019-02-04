@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GEController : MonoBehaviour {
     
     public static GEController instance;
+    public string STATE = "MAIN_MENU";
     public GameObject uiInteractionMenu;
     public GameObject uiLobbySettings;
     public GameObject uiMainMenu;
@@ -38,7 +39,7 @@ public class GEController : MonoBehaviour {
     }
     
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && STATE != "MAIN_MENU") {
             if (!isPaused) {
                 //GameObject.Find("FPSController(Clone)").GetComponent<FirstPersonController>().GetComponent<MouseLook>().SetCursorLock(false);
                 uiInteractionMenu.SetActive(true);
@@ -48,6 +49,8 @@ public class GEController : MonoBehaviour {
                 uiInteractionMenu.SetActive(false);
                 isPaused = false;
             }
+        } else if(STATE == "MAIN_MENU" && uiInteractionMenu.activeInHierarchy) {
+            uiInteractionMenu.SetActive(false);
         }
     }
 }
