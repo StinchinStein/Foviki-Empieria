@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 134}
   - component: {fileID: 142}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Outline Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 139}
   - component: {fileID: 147}
   - component: {fileID: 145}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 138}
   - component: {fileID: 153}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Directional light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 137}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Viewmodel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 152}
   - component: {fileID: 261}
   - component: {fileID: 267}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FPSController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 154}
   - component: {fileID: 262}
   - component: {fileID: 263}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   - component: {fileID: 148}
   - component: {fileID: 146}
   - component: {fileID: 150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -804,7 +804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3979761965855730930}
   - component: {fileID: 6357809229433032616}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Outline Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

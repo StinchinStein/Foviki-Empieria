@@ -48,7 +48,7 @@ public class LobbyPlayerScript : NetworkLobbyPlayer {
     void OnSetReady(bool ready) {
         this.isReady = ready;
         if (isReady) {
-            transform.Find("Button").GetComponent<Image>().color = new Color(0f, 1f, 0.1f);
+            transform.Find("Button").GetComponent<Image>().color = new Color(0f, 1f, 0.1f, 0.05f);
         }
     }
 

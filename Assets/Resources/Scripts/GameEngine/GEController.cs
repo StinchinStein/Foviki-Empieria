@@ -15,6 +15,7 @@ public class GEController : MonoBehaviour {
     public GameObject uiLobbyMenuNew;
     public GameObject uiPlayerList;
     public GameObject uiProfileSettings;
+    public GameObject uiTransitionScreen;
 
     public bool isPaused = false;
     private bool connectingToHost = false;

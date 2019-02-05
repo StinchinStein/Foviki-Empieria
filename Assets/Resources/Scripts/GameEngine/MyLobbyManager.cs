@@ -58,7 +58,12 @@ public class MyLobbyManager : NetworkLobbyManager {
         ServerChangeScene("Asylum");
         GEController.instance.STATE = "GAME";
     }
-    
+
+    public override void OnLobbyClientSceneChanged(NetworkConnection conn) {
+        base.OnLobbyClientSceneChanged(conn);
+        GEController.instance.STATE = "GAME";
+    }
+
     public void ServerStartGame(string sceneName) {
         ServerChangeScene(sceneName);
     }

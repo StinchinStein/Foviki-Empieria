@@ -57,6 +57,10 @@ public class FirstPersonController : NetworkBehaviour {
 
     // Use this for initialization
     private void Start() {
+        /*if(isLocalPlayer) {
+            GameObject screen = GEController.instance.uiTransitionScreen;
+            screen.SetActive(true);
+        }*/
         GEController.instance.uiLobbyMenuNew.SetActive(false);
         //GameObject.Find("GameManager").GetComponent<MyNetworkManager>().setLocalPlayer(gameObject);
 
@@ -89,10 +93,18 @@ public class FirstPersonController : NetworkBehaviour {
 
     }
 
-
+    float spawnTimer = 0;
     // Update is called once per frame
-    private void Update()
-    {
+    private void Update() {
+        /*if (spawnTimer > 50) {
+            GameObject screen = GEController.instance.uiTransitionScreen;
+            CanvasGroup cGroup = screen.GetComponent<CanvasGroup>();
+            if (cGroup.alpha > 0) {
+                cGroup.alpha -= 0.01f;
+            }
+        } else {
+            spawnTimer++;
+        }*/
         RotateView();
         // the jump state needs to read here to make sure it is not missed
         if (!m_Jump)
