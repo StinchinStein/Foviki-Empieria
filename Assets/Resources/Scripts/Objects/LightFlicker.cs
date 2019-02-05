@@ -4,30 +4,21 @@ using UnityEngine;
 
 public class LightFlicker : MonoBehaviour {
 
-    private int val = 0;
-    public AudioClip alarmSound;
-    private bool playing = false;
-
+    public float maxWaitTime, minWaitTime;
+    private bool flash = false;
     void Start () {
-        GetComponent<AudioSource>().clip = alarmSound;
-        GetComponent<AudioSource>().loop = false;
+        StartCoroutine(Flashing());
     }
 	
-	// Update is called once per frame
-	void FixedUpdate() {
-        val++;
-        if (val % 1500 > 1500/2) {
-            GetComponent<Light>().intensity = 0.35f;
-            if (!playing) {
-                GetComponent<AudioSource>().Play();
-                playing = true;
+    IEnumerator Flashing() {
+        while(true) {
+            yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
+            flash = !flash;
+            if(flash) {
+                GetComponent<Light>().intensity = 0.45f;
+            } else {
+                GetComponent<Light>().intensity = 0.425f;
             }
-        } else {
-            if (playing) {
-                //GetComponent<AudioSource>().Stop();
-                playing = false;
-            }
-            GetComponent<Light>().intensity = 0.15f;
         }
     }
 }
