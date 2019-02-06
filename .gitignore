@@ -40,3 +40,5 @@ ProjectSettings/QualitySettings.asset
 ProjectSettings/QualitySettings.asset
 ProjectSettings/QualitySettings.asset
 Assets/ProCore/ProBuilder/Data/ProBuilderPreferences.asset
+*.meta
+*.meta

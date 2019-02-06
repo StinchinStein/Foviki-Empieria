@@ -17,6 +17,9 @@ public class MyLobbyManager : NetworkLobbyManager {
     public Button hostBtn;
     public Button joinBtn;
 
+    public GameObject[] playerEntities;
+    public int plrIndex;
+
     private bool isHosting = false;
     private string mapName = "Asylum";
 
@@ -24,35 +27,38 @@ public class MyLobbyManager : NetworkLobbyManager {
         gameEngine = GameObject.Find("GameManager").GetComponent<GEController>();
         //this.client.RegisterHandler(MsgType.Disconnect, OnDisconnect);
     }
-    
+
     public override bool OnLobbyServerSceneLoadedForPlayer(GameObject lobbyPlayer, GameObject gamePlayer) {
-        //gamePlayer.transform.Translate(GameObject.Find("Spawn Position 1").transform.position, Space.World);
-        return true;
+        return false;
+    }
+    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId) {
+        Debug.Log("Client Player Added?");
+        if(GEController.instance.STATE == "MAIN_MENU") {
+            GameObject go = Instantiate(this.lobbyPlayerPrefab.gameObject, Vector3.zero, Quaternion.identity);
+            NetworkServer.ReplacePlayerForConnection(conn, go, playerControllerId);
+        }
+        /*GameObject go = Instantiate(playerEntities[plrIndex], GameObject.Find("Spawn Position 1").transform.position, Quaternion.identity);
+        NetworkServer.ReplacePlayerForConnection(conn, go, playerControllerId);
+
+        Debug.Log("Created GAME PLAYER!!");*/
     }
 
-    /*public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId) {
-        Debug.Log("Player Added");
-        GameObject plr = Instantiate(this.lobbyPlayerPrefab.gameObject, GetStartPosition().position, Quaternion.identity);
-        plr.name = "LobbyPlayer_" + playerControllerId;
-        NetworkServer.AddPlayerForConnection(conn, plr, playerControllerId);
-        Debug.Log("Player Added - " + plr.name);
-    }*/
-
+    /*
     public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId) {
         GameObject plr = Instantiate(this.lobbyPlayerPrefab.gameObject, Vector3.zero, Quaternion.identity);
         plr.name = "LobbyPlayer_" + playerControllerId;
         Debug.Log("Created Lobby Player");
         return plr;
     }
-
+    */
     public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId) {
-        /*GameObject go = Instantiate(spawnPrefabs[m_currentPlayers[conn.connectionId]]);
-        NetworkServer.AddPlayerForConnection(conn, go, playerControllerId);
-
-        return go;*/
-        return null;
+        NetworkServer.SetClientReady(conn);
+        GameObject go = Instantiate(playerEntities[plrIndex], GameObject.Find("Spawn Position 1").transform.position, Quaternion.identity);
+        Debug.Log(go.transform.position);
+        NetworkServer.ReplacePlayerForConnection(conn, go, playerControllerId);
+        return go;
     }
-
+    
     public override void OnLobbyServerPlayersReady() {
         //ServerStartGame("Asylum");
         ServerChangeScene("Asylum");
@@ -63,7 +69,7 @@ public class MyLobbyManager : NetworkLobbyManager {
         base.OnLobbyClientSceneChanged(conn);
         GEController.instance.STATE = "GAME";
     }
-
+    
     public void ServerStartGame(string sceneName) {
         ServerChangeScene(sceneName);
     }
@@ -113,7 +119,7 @@ public class MyLobbyManager : NetworkLobbyManager {
         return true;
     }*/
 
-    public void HostGame() {
+        public void HostGame() {
         isHosting = true;
 
         GEController.instance.uiMainMenu.SetActive(false);
